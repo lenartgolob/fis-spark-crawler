@@ -190,7 +190,7 @@ Kjer je `p` število jeder, `T(1)` čas z enim jedrom in `T(p)` čas s `p` jedri
 
 ---
 
-## Odprta vprašanja in predlogi za profesorja
+## Odprta vprašanja in predlogi od profesorja
 
 ### Razširjeni testi: sinhroni vs. asinhroni način (max-depth=3, niti 1–16)
 
