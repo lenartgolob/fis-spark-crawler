@@ -10,8 +10,10 @@ določene globine in išče prisotnost ključne besede na vsaki strani.
 
 import os
 import time
+import asyncio
 from datetime import datetime
 import requests
+import aiohttp
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 from pyspark.sql import SparkSession
@@ -71,10 +73,62 @@ def fetch_and_parse(url, keyword):
 
 
 # ──────────────────────────────────────────────
+# Asinhrone pomožne funkcije (async način)
+# ──────────────────────────────────────────────
+
+async def fetch_one_async(session, url, keyword, semaphore):
+    async with semaphore:
+        try:
+            headers = {"User-Agent": "SparkCrawler/1.0 (university project)"}
+            timeout = aiohttp.ClientTimeout(total=10)
+            async with session.get(url, timeout=timeout, headers=headers) as response:
+                content_type = response.headers.get("Content-Type", "")
+                if "text/html" not in content_type:
+                    return (url, response.status, False, [])
+
+                html = await response.text()
+                soup = BeautifulSoup(html, "html.parser")
+
+                text_content = soup.get_text().lower()
+                keyword_found = keyword.lower() in text_content
+
+                links = []
+                for tag in soup.find_all("a", href=True):
+                    href = tag["href"]
+                    full_url = urljoin(url, href)
+                    parsed = urlparse(full_url)
+                    if parsed.scheme in ("http", "https"):
+                        clean_url = f"{parsed.scheme}://{parsed.netloc}{parsed.path}"
+                        if parsed.query:
+                            clean_url += f"?{parsed.query}"
+                        links.append(clean_url)
+
+                return (url, response.status, keyword_found, links)
+        except Exception as e:
+            return (url, type(e).__name__, False, [])
+
+
+async def fetch_all_async(urls, keyword, max_concurrent=10):
+    semaphore = asyncio.Semaphore(max_concurrent)
+    connector = aiohttp.TCPConnector(limit=max_concurrent)
+    async with aiohttp.ClientSession(connector=connector) as session:
+        tasks = [fetch_one_async(session, url, keyword, semaphore) for url in urls]
+        return await asyncio.gather(*tasks)
+
+
+def fetch_partition_async(iterator, keyword):
+    urls = list(iterator)
+    if not urls:
+        return iter([])
+    results = asyncio.run(fetch_all_async(urls, keyword))
+    return iter(results)
+
+
+# ──────────────────────────────────────────────
 # Glavna Spark logika crawlerja
 # ──────────────────────────────────────────────
 
-def run_crawler(seed_url, keyword, max_depth, num_cores, max_urls_per_depth=100):
+def run_crawler(seed_url, keyword, max_depth, num_cores, max_urls_per_depth=100, async_mode=False):
     """
     Izvede vzporedni crawl z Apache Spark.
 
@@ -84,6 +138,7 @@ def run_crawler(seed_url, keyword, max_depth, num_cores, max_urls_per_depth=100)
         max_depth:          maksimalna globina preiskovanja
         num_cores:          število executorjev (local[N])
         max_urls_per_depth: maks. število URL-jev na nivo (za nadzor obsega)
+        async_mode:         uporabi asinhrono izvajanje HTTP zahtev (privzeto: False)
 
     Vrne:
         dict s statistiko in časom izvajanja
@@ -125,13 +180,17 @@ def run_crawler(seed_url, keyword, max_depth, num_cores, max_urls_per_depth=100)
         if max_urls_per_depth and len(new_urls) > max_urls_per_depth:
             new_urls = new_urls[:max_urls_per_depth]
 
-        print(f"  Globina {depth}: obdelujem {len(new_urls)} URL-jev z {num_cores} jedri...")
+        mode_label = "async" if async_mode else "sync"
+        print(f"  Globina {depth}: obdelujem {len(new_urls)} URL-jev z {num_cores} jedri ({mode_label})...")
 
         # Ustvari RDD iz seznama URL-jev in vzporedno obdelaj
         urls_rdd = sc.parallelize(new_urls, numSlices=min(len(new_urls), num_cores * 2))
 
         kw = kw_broadcast.value
-        results_rdd = urls_rdd.map(lambda url: fetch_and_parse(url, kw))
+        if async_mode:
+            results_rdd = urls_rdd.mapPartitions(lambda it: fetch_partition_async(it, kw))
+        else:
+            results_rdd = urls_rdd.map(lambda url: fetch_and_parse(url, kw))
 
         # Zberi rezultate
         results = results_rdd.collect()
@@ -209,6 +268,8 @@ if __name__ == "__main__":
                         help="Maks. URL-jev na nivo globine (privzeto: 100)")
     parser.add_argument("--output-dir", type=str, default="results",
                         help="Mapa za rezultate (privzeto: results)")
+    parser.add_argument("--async", dest="async_mode", action="store_true",
+                        help="Uporabi asinhrono izvajanje HTTP zahtev (aiohttp)")
 
     args = parser.parse_args()
 
@@ -216,6 +277,7 @@ if __name__ == "__main__":
     output_dir = os.path.join(args.output_dir, timestamp)
     os.makedirs(output_dir, exist_ok=True)
 
+    mode_str = "async (aiohttp)" if args.async_mode else "sync (requests)"
     print(f"\n{'='*60}")
     print(f"  Vzporedni Link Crawler (PySpark)")
     print(f"  Seed URL:   {args.seed_url}")
@@ -223,10 +285,11 @@ if __name__ == "__main__":
     print(f"  Max depth:  {args.max_depth}")
     print(f"  Max URLs:   {args.max_urls}")
     print(f"  Cores:      {args.cores}")
+    print(f"  Način:      {mode_str}")
     print(f"  Output:     {output_dir}")
     print(f"{'='*60}\n")
 
-    result = run_crawler(args.seed_url, args.keyword, args.max_depth, args.cores, args.max_urls)
+    result = run_crawler(args.seed_url, args.keyword, args.max_depth, args.cores, args.max_urls, args.async_mode)
 
     print(f"\n{'='*60}")
     print(f"  REZULTATI")

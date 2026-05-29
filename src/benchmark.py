@@ -44,7 +44,7 @@ def compute_karp_flatt(speedup, p):
     return numerator / denominator
 
 
-def run_benchmark(seed_url, keyword, max_depth, core_configs, num_runs=3, max_urls=100):
+def run_benchmark(seed_url, keyword, max_depth, core_configs, num_runs=3, max_urls=100, async_mode=False):
     """
     Izvede celoten benchmark.
 
@@ -55,6 +55,7 @@ def run_benchmark(seed_url, keyword, max_depth, core_configs, num_runs=3, max_ur
         core_configs:   seznam konfiguracij jeder [1, 2, 4, 8]
         num_runs:       število ponovitev za vsako konfiguracijo
         max_urls:       maks. URL-jev na nivo globine
+        async_mode:     uporabi asinhrono izvajanje HTTP zahtev
 
     Vrne:
         seznam dict-ov z rezultati
@@ -72,7 +73,7 @@ def run_benchmark(seed_url, keyword, max_depth, core_configs, num_runs=3, max_ur
 
         for run_num in range(1, num_runs + 1):
             print(f"\n  Zagon {run_num}/{num_runs}...")
-            result = run_crawler(seed_url, keyword, max_depth, cores, max_urls)
+            result = run_crawler(seed_url, keyword, max_depth, cores, max_urls, async_mode)
             elapsed = result["elapsed_time"]
             run_times.append(elapsed)
             run_details.append(result)
@@ -252,6 +253,8 @@ if __name__ == "__main__":
                         help="Mapa za rezultate (privzeto: results)")
     parser.add_argument("--max-urls", type=int, default=100,
                         help="Maks. URL-jev na nivo globine (privzeto: 100)")
+    parser.add_argument("--async", dest="async_mode", action="store_true",
+                        help="Uporabi asinhrono izvajanje HTTP zahtev (aiohttp)")
 
     args = parser.parse_args()
     core_configs = [int(c) for c in args.cores.split(",")]
@@ -260,6 +263,7 @@ if __name__ == "__main__":
     output_dir = os.path.join(args.output_dir, timestamp)
     os.makedirs(output_dir, exist_ok=True)
 
+    mode_str = "async (aiohttp)" if args.async_mode else "sync (requests)"
     print(f"\n{'='*60}")
     print(f"  BENCHMARK: Vzporedni Link Crawler")
     print(f"  Seed URL:       {args.seed_url}")
@@ -268,12 +272,13 @@ if __name__ == "__main__":
     print(f"  Max URLs/nivo:  {args.max_urls}")
     print(f"  Konfiguracije:  {core_configs}")
     print(f"  Ponovitev:      {args.runs}")
+    print(f"  Način:          {mode_str}")
     print(f"  Output:         {output_dir}")
     print(f"{'='*60}")
 
     results, crawl_logs = run_benchmark(
         args.seed_url, args.keyword, args.max_depth,
-        core_configs, args.runs, args.max_urls
+        core_configs, args.runs, args.max_urls, args.async_mode
     )
 
     print_summary(results)
