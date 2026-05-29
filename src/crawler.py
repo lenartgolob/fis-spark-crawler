@@ -8,7 +8,9 @@ Program začne z enim izhodiščnim URL-jem, iterativno sledi povezavam do
 določene globine in išče prisotnost ključne besede na vsaki strani.
 """
 
+import os
 import time
+from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
@@ -36,7 +38,7 @@ def fetch_and_parse(url, keyword):
         # Preverimo samo HTML vsebino
         content_type = response.headers.get("Content-Type", "")
         if "text/html" not in content_type:
-            return (url, False, [])
+            return (url, response.status_code, False, [])
 
         html = response.text
         soup = BeautifulSoup(html, "html.parser")
@@ -59,11 +61,13 @@ def fetch_and_parse(url, keyword):
                     clean_url += f"?{parsed.query}"
                 links.append(clean_url)
 
-        return (url, keyword_found, links)
+        return (url, response.status_code, keyword_found, links)
 
+    except requests.exceptions.HTTPError as e:
+        status = e.response.status_code if e.response is not None else "HTTPError"
+        return (url, status, False, [])
     except Exception as e:
-        # Stran ni dosegljiva ali napaka pri parsanju
-        return (url, False, [])
+        return (url, type(e).__name__, False, [])
 
 
 # ──────────────────────────────────────────────
@@ -96,8 +100,7 @@ def run_crawler(seed_url, keyword, max_depth, num_cores, max_urls_per_depth=100)
     sc.setLogLevel("ERROR")
 
     # Dodaj to datoteko kot py file, da jo workerji lahko najdejo
-    import os as _os
-    _this_file = _os.path.abspath(__file__)
+    _this_file = os.path.abspath(__file__)
     sc.addPyFile(_this_file)
 
     # Broadcast ključne besede (da se ne pošilja z vsako nalogo)
@@ -107,6 +110,7 @@ def run_crawler(seed_url, keyword, max_depth, num_cores, max_urls_per_depth=100)
     to_visit = [seed_url]   # Vrsta URL-jev za obdelavo
     all_results = []        # Vsi rezultati po nivojih
     stats_per_depth = []    # Statistika po globini
+    log_entries = []
 
     start_time = time.time()
 
@@ -135,9 +139,16 @@ def run_crawler(seed_url, keyword, max_depth, num_cores, max_urls_per_depth=100)
         # Posodobi statistiko
         depth_hits = 0
         next_level_urls = []
-        for url, found, links in results:
+        for url, status, found, links in results:
             visited.add(url)
             all_results.append({"url": url, "keyword_found": found, "depth": depth})
+            log_entries.append({
+                "url": url,
+                "depth": depth,
+                "status": status,
+                "keyword_found": found,
+                "links_found": len(links)
+            })
             if found:
                 depth_hits += 1
             next_level_urls.extend(links)
@@ -171,7 +182,8 @@ def run_crawler(seed_url, keyword, max_depth, num_cores, max_urls_per_depth=100)
         "total_pages": total_pages,
         "total_hits": total_hits,
         "stats_per_depth": stats_per_depth,
-        "results": all_results
+        "results": all_results,
+        "log_entries": log_entries
     }
 
 
@@ -195,8 +207,14 @@ if __name__ == "__main__":
                         help="Število jeder (privzeto: 1)")
     parser.add_argument("--max-urls", type=int, default=100,
                         help="Maks. URL-jev na nivo globine (privzeto: 100)")
+    parser.add_argument("--output-dir", type=str, default="results",
+                        help="Mapa za rezultate (privzeto: results)")
 
     args = parser.parse_args()
+
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    output_dir = os.path.join(args.output_dir, timestamp)
+    os.makedirs(output_dir, exist_ok=True)
 
     print(f"\n{'='*60}")
     print(f"  Vzporedni Link Crawler (PySpark)")
@@ -205,6 +223,7 @@ if __name__ == "__main__":
     print(f"  Max depth:  {args.max_depth}")
     print(f"  Max URLs:   {args.max_urls}")
     print(f"  Cores:      {args.cores}")
+    print(f"  Output:     {output_dir}")
     print(f"{'='*60}\n")
 
     result = run_crawler(args.seed_url, args.keyword, args.max_depth, args.cores, args.max_urls)
@@ -219,3 +238,25 @@ if __name__ == "__main__":
     for s in result["stats_per_depth"]:
         print(f"  Globina {s['depth']}: {s['pages_crawled']} strani, {s['keyword_hits']} zadetkov")
     print(f"{'='*60}\n")
+
+    log_path = os.path.join(output_dir, "crawl.log")
+    with open(log_path, "w") as f:
+        f.write(f"{'='*60}\n")
+        f.write(f"  CORES: {args.cores}\n")
+        f.write(f"  Started: {timestamp}\n")
+        f.write(f"{'='*60}\n")
+        current_depth = None
+        for entry in result["log_entries"]:
+            if entry["depth"] != current_depth:
+                current_depth = entry["depth"]
+                count = sum(1 for e in result["log_entries"] if e["depth"] == current_depth)
+                f.write(f"[DEPTH {current_depth}] Processing {count} URLs\n")
+            status = entry["status"]
+            kw = "YES" if entry["keyword_found"] else "NO"
+            if isinstance(status, int):
+                label = "OK" if status < 400 else "FAIL"
+                f.write(f"  {label:4s} {status}  {entry['url']}  keyword={kw}  links={entry['links_found']}\n")
+            else:
+                f.write(f"  ERR  ---  {entry['url']}  {status}\n")
+        f.write(f"Finished: {result['elapsed_time']:.2f}s | Pages: {result['total_pages']} | Hits: {result['total_hits']}\n")
+    print(f"Crawl log shranjen: {log_path}")

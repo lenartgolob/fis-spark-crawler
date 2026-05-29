@@ -1,0 +1,696 @@
+
+============================================================
+  CORES: 1 | RUN: 1/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/  keyword=NO  links=152
+  OK   200  https://github.com/features/models  keyword=NO  links=142
+  OK   200  https://github.com/features/code-review  keyword=NO  links=148
+  OK   200  https://github.com/security/advanced-security  keyword=NO  links=152
+  OK   200  https://github.com/security/advanced-security/secret-protection  keyword=NO  links=142
+  OK   200  https://github.com/why-github  keyword=NO  links=144
+  FAIL 400  https://github.com/marketplace  keyword=NO  links=0
+  OK   200  https://github.com/enterprise  keyword=NO  links=186
+  OK   200  https://github.com/solutions/industry/nonprofits  keyword=NO  links=137
+  OK   200  https://github.com/solutions/use-case/ci-cd  keyword=NO  links=139
+  OK   200  https://github.com/solutions/use-case  keyword=NO  links=143
+  OK   200  https://github.com/solutions/industry/government  keyword=NO  links=141
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://github.com/resources/articles  keyword=NO  links=149
+  OK   200  https://github.com/customer-stories  keyword=NO  links=236
+  OK   200  https://github.com/resources/events  keyword=NO  links=145
+  OK   200  https://skills.github.com  keyword=NO  links=1
+  OK   200  https://support.github.com  keyword=NO  links=1
+  OK   200  https://github.com/resources  keyword=NO  links=155
+  OK   200  https://securitylab.github.com  keyword=YES  links=87
+  OK   200  https://maintainers.github.com  keyword=NO  links=2
+  OK   200  https://github.com/accelerator  keyword=NO  links=153
+  OK   200  https://stars.github.com  keyword=NO  links=14
+  OK   200  https://archiveprogram.github.com  keyword=NO  links=16
+  OK   200  https://github.com/trending  keyword=YES  links=1210
+  OK   200  https://github.com/collections  keyword=NO  links=109
+  OK   200  https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=apache%2Fspark  keyword=NO  links=7
+  OK   200  https://github.com/login?return_to=%2Fapache%2Fspark  keyword=NO  links=11
+  OK   200  https://github.com/apache/spark/issues  keyword=YES  links=126
+  OK   200  https://github.com/apache/spark/actions  keyword=YES  links=233
+  OK   200  https://github.com/apache/spark/pulse  keyword=YES  links=105
+  OK   200  https://github.com/apache/spark/branches  keyword=YES  links=113
+  OK   200  https://github.com/apache/spark/tags  keyword=YES  links=140
+  OK   200  https://github.com/apache/spark/tree/master/.github  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/R  keyword=YES  links=130
+  OK   200  https://github.com/apache/spark/tree/master/binder  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/common  keyword=YES  links=123
+  OK   200  https://github.com/apache/spark/tree/master/connector  keyword=YES  links=125
+  OK   200  https://github.com/apache/spark/tree/master/core  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/tree/master/hadoop-cloud  keyword=YES  links=111
+  OK   200  https://github.com/apache/spark/tree/master/mllib  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/python  keyword=YES  links=154
+  OK   200  https://github.com/apache/spark/tree/master/tools  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/udf/worker  keyword=YES  links=125
+  OK   200  https://github.com/apache/spark/tree/master/ui-test  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/blob/master/.asf.yaml  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/.nojekyll  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/.sbtopts  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/AGENTS.md  keyword=YES  links=114
+Finished: 33.99s | Pages: 51 | Hits: 25
+
+============================================================
+  CORES: 1 | RUN: 2/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/  keyword=NO  links=152
+  OK   200  https://github.com/features/models  keyword=NO  links=142
+  OK   200  https://github.com/features/code-review  keyword=NO  links=148
+  OK   200  https://github.com/security/advanced-security  keyword=NO  links=152
+  OK   200  https://github.com/security/advanced-security/secret-protection  keyword=NO  links=142
+  OK   200  https://github.com/why-github  keyword=NO  links=144
+  FAIL 400  https://github.com/marketplace  keyword=NO  links=0
+  OK   200  https://github.com/enterprise  keyword=NO  links=186
+  OK   200  https://github.com/solutions/industry/nonprofits  keyword=NO  links=137
+  OK   200  https://github.com/solutions/use-case/ci-cd  keyword=NO  links=139
+  OK   200  https://github.com/solutions/use-case  keyword=NO  links=143
+  OK   200  https://github.com/solutions/industry/government  keyword=NO  links=141
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://github.com/resources/articles  keyword=NO  links=149
+  OK   200  https://github.com/customer-stories  keyword=NO  links=236
+  OK   200  https://github.com/resources/events  keyword=NO  links=145
+  OK   200  https://skills.github.com  keyword=NO  links=1
+  OK   200  https://support.github.com  keyword=NO  links=1
+  OK   200  https://github.com/resources  keyword=NO  links=155
+  OK   200  https://securitylab.github.com  keyword=YES  links=87
+  OK   200  https://maintainers.github.com  keyword=NO  links=2
+  OK   200  https://github.com/accelerator  keyword=NO  links=153
+  OK   200  https://stars.github.com  keyword=NO  links=14
+  OK   200  https://archiveprogram.github.com  keyword=NO  links=16
+  OK   200  https://github.com/trending  keyword=YES  links=1210
+  OK   200  https://github.com/collections  keyword=NO  links=109
+  OK   200  https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=apache%2Fspark  keyword=NO  links=7
+  OK   200  https://github.com/login?return_to=%2Fapache%2Fspark  keyword=NO  links=11
+  OK   200  https://github.com/apache/spark/issues  keyword=YES  links=126
+  OK   200  https://github.com/apache/spark/actions  keyword=YES  links=233
+  OK   200  https://github.com/apache/spark/pulse  keyword=YES  links=105
+  OK   200  https://github.com/apache/spark/branches  keyword=YES  links=113
+  OK   200  https://github.com/apache/spark/tags  keyword=YES  links=140
+  OK   200  https://github.com/apache/spark/tree/master/.github  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/R  keyword=YES  links=130
+  OK   200  https://github.com/apache/spark/tree/master/binder  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/common  keyword=YES  links=123
+  OK   200  https://github.com/apache/spark/tree/master/connector  keyword=YES  links=125
+  OK   200  https://github.com/apache/spark/tree/master/core  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/tree/master/hadoop-cloud  keyword=YES  links=111
+  OK   200  https://github.com/apache/spark/tree/master/mllib  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/python  keyword=YES  links=154
+  OK   200  https://github.com/apache/spark/tree/master/tools  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/udf/worker  keyword=YES  links=125
+  OK   200  https://github.com/apache/spark/tree/master/ui-test  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/blob/master/.asf.yaml  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/.nojekyll  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/.sbtopts  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/AGENTS.md  keyword=YES  links=114
+Finished: 10.52s | Pages: 51 | Hits: 25
+
+============================================================
+  CORES: 1 | RUN: 3/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/  keyword=NO  links=152
+  OK   200  https://github.com/features/models  keyword=NO  links=142
+  OK   200  https://github.com/features/code-review  keyword=NO  links=148
+  OK   200  https://github.com/security/advanced-security  keyword=NO  links=152
+  OK   200  https://github.com/security/advanced-security/secret-protection  keyword=NO  links=142
+  OK   200  https://github.com/why-github  keyword=NO  links=144
+  FAIL 400  https://github.com/marketplace  keyword=NO  links=0
+  OK   200  https://github.com/enterprise  keyword=NO  links=186
+  OK   200  https://github.com/solutions/industry/nonprofits  keyword=NO  links=137
+  OK   200  https://github.com/solutions/use-case/ci-cd  keyword=NO  links=139
+  OK   200  https://github.com/solutions/use-case  keyword=NO  links=143
+  OK   200  https://github.com/solutions/industry/government  keyword=NO  links=141
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://github.com/resources/articles  keyword=NO  links=149
+  OK   200  https://github.com/customer-stories  keyword=NO  links=236
+  OK   200  https://github.com/resources/events  keyword=NO  links=145
+  OK   200  https://skills.github.com  keyword=NO  links=1
+  OK   200  https://support.github.com  keyword=NO  links=1
+  OK   200  https://github.com/resources  keyword=NO  links=155
+  OK   200  https://securitylab.github.com  keyword=YES  links=87
+  OK   200  https://maintainers.github.com  keyword=NO  links=2
+  OK   200  https://github.com/accelerator  keyword=NO  links=153
+  OK   200  https://stars.github.com  keyword=NO  links=14
+  OK   200  https://archiveprogram.github.com  keyword=NO  links=16
+  OK   200  https://github.com/trending  keyword=YES  links=1210
+  OK   200  https://github.com/collections  keyword=NO  links=109
+  OK   200  https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=apache%2Fspark  keyword=NO  links=7
+  OK   200  https://github.com/login?return_to=%2Fapache%2Fspark  keyword=NO  links=11
+  OK   200  https://github.com/apache/spark/issues  keyword=YES  links=126
+  OK   200  https://github.com/apache/spark/actions  keyword=YES  links=233
+  OK   200  https://github.com/apache/spark/pulse  keyword=YES  links=105
+  OK   200  https://github.com/apache/spark/branches  keyword=YES  links=113
+  OK   200  https://github.com/apache/spark/tags  keyword=YES  links=140
+  OK   200  https://github.com/apache/spark/tree/master/.github  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/R  keyword=YES  links=130
+  OK   200  https://github.com/apache/spark/tree/master/binder  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/common  keyword=YES  links=123
+  OK   200  https://github.com/apache/spark/tree/master/connector  keyword=YES  links=125
+  OK   200  https://github.com/apache/spark/tree/master/core  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/tree/master/hadoop-cloud  keyword=YES  links=111
+  OK   200  https://github.com/apache/spark/tree/master/mllib  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/python  keyword=YES  links=154
+  OK   200  https://github.com/apache/spark/tree/master/tools  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/udf/worker  keyword=YES  links=125
+  OK   200  https://github.com/apache/spark/tree/master/ui-test  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/blob/master/.asf.yaml  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/.nojekyll  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/.sbtopts  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/AGENTS.md  keyword=YES  links=114
+Finished: 11.48s | Pages: 51 | Hits: 25
+
+============================================================
+  CORES: 2 | RUN: 1/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/  keyword=NO  links=152
+  OK   200  https://github.com/features/models  keyword=NO  links=142
+  OK   200  https://github.com/security/advanced-security/secret-protection  keyword=NO  links=142
+  OK   200  https://github.com/why-github  keyword=NO  links=144
+  FAIL 400  https://github.com/marketplace  keyword=NO  links=0
+  OK   200  https://github.com/enterprise  keyword=NO  links=186
+  OK   200  https://github.com/solutions/industry/nonprofits  keyword=NO  links=137
+  OK   200  https://github.com/solutions/use-case  keyword=NO  links=143
+  OK   200  https://github.com/solutions/industry/government  keyword=NO  links=141
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://github.com/resources/events  keyword=NO  links=145
+  OK   200  https://skills.github.com  keyword=NO  links=1
+  OK   200  https://github.com/resources  keyword=NO  links=155
+  OK   200  https://maintainers.github.com  keyword=NO  links=2
+  OK   200  https://stars.github.com  keyword=NO  links=14
+  OK   200  https://github.com/collections  keyword=NO  links=109
+  OK   200  https://github.com/apache/spark/tags  keyword=YES  links=140
+  OK   200  https://github.com/apache/spark/tree/master/.github  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/connector  keyword=YES  links=125
+  OK   200  https://github.com/apache/spark/tree/master/core  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/tree/master/mllib  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/tools  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/blob/master/.nojekyll  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/AGENTS.md  keyword=YES  links=114
+  OK   200  https://github.com/apache/spark/blob/master/NOTICE-binary  keyword=YES  links=104
+  OK   200  https://github.com/apache/spark/blob/master/README.md  keyword=YES  links=190
+  OK   200  https://opensource.org/licenses/Apache-2.0  keyword=YES  links=65
+  FAIL 403  https://search.maven.org/search?q=g:org.apache.spark  keyword=NO  links=0
+  OK   200  https://github.com/apache/spark/actions/workflows/build_main.yml  keyword=YES  links=263
+  OK   200  https://codecov.io/gh/apache/spark  keyword=NO  links=0
+  OK   200  https://spark.apache.org/documentation.html  keyword=YES  links=221
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven_java21_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_coverage.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.12_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.13.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_connect40.yml  keyword=YES  links=214
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_non_ansi.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_java25.yml  keyword=YES  links=138
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_non_ansi.yml  keyword=YES  links=158
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_python_3.14.yml  keyword=YES  links=163
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_java21.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven_java21.yml  keyword=YES  links=213
+  OK   200  https://maven.apache.org/  keyword=YES  links=85
+  OK   200  https://spark.apache.org/developer-tools.html  keyword=YES  links=75
+  OK   200  https://spark.apache.org/docs/latest/configuration.html  keyword=YES  links=127
+Finished: 14.60s | Pages: 51 | Hits: 33
+
+============================================================
+  CORES: 2 | RUN: 2/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/  keyword=NO  links=152
+  OK   200  https://github.com/features/models  keyword=NO  links=142
+  OK   200  https://github.com/security/advanced-security/secret-protection  keyword=NO  links=142
+  OK   200  https://github.com/why-github  keyword=NO  links=144
+  FAIL 400  https://github.com/marketplace  keyword=NO  links=0
+  OK   200  https://github.com/enterprise  keyword=NO  links=186
+  OK   200  https://github.com/solutions/industry/nonprofits  keyword=NO  links=137
+  OK   200  https://github.com/solutions/use-case  keyword=NO  links=143
+  OK   200  https://github.com/solutions/industry/government  keyword=NO  links=141
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://github.com/resources/events  keyword=NO  links=145
+  OK   200  https://skills.github.com  keyword=NO  links=1
+  OK   200  https://github.com/resources  keyword=NO  links=155
+  OK   200  https://maintainers.github.com  keyword=NO  links=2
+  OK   200  https://stars.github.com  keyword=NO  links=14
+  OK   200  https://github.com/collections  keyword=NO  links=109
+  OK   200  https://github.com/apache/spark/tags  keyword=YES  links=140
+  OK   200  https://github.com/apache/spark/tree/master/.github  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/connector  keyword=YES  links=125
+  OK   200  https://github.com/apache/spark/tree/master/core  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/tree/master/mllib  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/tools  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/blob/master/.nojekyll  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/AGENTS.md  keyword=YES  links=114
+  OK   200  https://github.com/apache/spark/blob/master/NOTICE-binary  keyword=YES  links=104
+  OK   200  https://github.com/apache/spark/blob/master/README.md  keyword=YES  links=190
+  OK   200  https://opensource.org/licenses/Apache-2.0  keyword=YES  links=65
+  FAIL 403  https://search.maven.org/search?q=g:org.apache.spark  keyword=NO  links=0
+  OK   200  https://github.com/apache/spark/actions/workflows/build_main.yml  keyword=YES  links=263
+  OK   200  https://codecov.io/gh/apache/spark  keyword=NO  links=0
+  OK   200  https://spark.apache.org/documentation.html  keyword=YES  links=221
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven_java21_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_coverage.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.12_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.13.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_connect40.yml  keyword=YES  links=214
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_non_ansi.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_java25.yml  keyword=YES  links=138
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_non_ansi.yml  keyword=YES  links=158
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_python_3.14.yml  keyword=YES  links=163
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_java21.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven_java21.yml  keyword=YES  links=213
+  OK   200  https://maven.apache.org/  keyword=YES  links=85
+  OK   200  https://spark.apache.org/developer-tools.html  keyword=YES  links=75
+  OK   200  https://spark.apache.org/docs/latest/configuration.html  keyword=YES  links=127
+Finished: 6.49s | Pages: 51 | Hits: 33
+
+============================================================
+  CORES: 2 | RUN: 3/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/  keyword=NO  links=152
+  OK   200  https://github.com/features/models  keyword=NO  links=142
+  OK   200  https://github.com/security/advanced-security/secret-protection  keyword=NO  links=142
+  OK   200  https://github.com/why-github  keyword=NO  links=144
+  FAIL 400  https://github.com/marketplace  keyword=NO  links=0
+  OK   200  https://github.com/enterprise  keyword=NO  links=186
+  OK   200  https://github.com/solutions/industry/nonprofits  keyword=NO  links=137
+  OK   200  https://github.com/solutions/use-case  keyword=NO  links=143
+  OK   200  https://github.com/solutions/industry/government  keyword=NO  links=141
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://github.com/resources/events  keyword=NO  links=145
+  OK   200  https://skills.github.com  keyword=NO  links=1
+  OK   200  https://github.com/resources  keyword=NO  links=155
+  OK   200  https://maintainers.github.com  keyword=NO  links=2
+  OK   200  https://stars.github.com  keyword=NO  links=14
+  OK   200  https://github.com/collections  keyword=NO  links=109
+  OK   200  https://github.com/apache/spark/tags  keyword=YES  links=140
+  OK   200  https://github.com/apache/spark/tree/master/.github  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/connector  keyword=YES  links=125
+  OK   200  https://github.com/apache/spark/tree/master/core  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/tree/master/mllib  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/tools  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/blob/master/.nojekyll  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/blob/master/AGENTS.md  keyword=YES  links=114
+  OK   200  https://github.com/apache/spark/blob/master/NOTICE-binary  keyword=YES  links=104
+  OK   200  https://github.com/apache/spark/blob/master/README.md  keyword=YES  links=190
+  OK   200  https://opensource.org/licenses/Apache-2.0  keyword=YES  links=65
+  FAIL 403  https://search.maven.org/search?q=g:org.apache.spark  keyword=NO  links=0
+  OK   200  https://github.com/apache/spark/actions/workflows/build_main.yml  keyword=YES  links=263
+  OK   200  https://codecov.io/gh/apache/spark  keyword=NO  links=0
+  OK   200  https://spark.apache.org/documentation.html  keyword=YES  links=221
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven_java21_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_coverage.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.12_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.13.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_connect40.yml  keyword=YES  links=214
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_non_ansi.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_java25.yml  keyword=YES  links=138
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_non_ansi.yml  keyword=YES  links=158
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_python_3.14.yml  keyword=YES  links=163
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_java21.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven_java21.yml  keyword=YES  links=213
+  OK   200  https://maven.apache.org/  keyword=YES  links=85
+  OK   200  https://spark.apache.org/developer-tools.html  keyword=YES  links=75
+  OK   200  https://spark.apache.org/docs/latest/configuration.html  keyword=YES  links=127
+Finished: 6.35s | Pages: 51 | Hits: 33
+
+============================================================
+  CORES: 4 | RUN: 1/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/features/models  keyword=NO  links=142
+  FAIL 400  https://github.com/marketplace  keyword=NO  links=0
+  OK   200  https://github.com/solutions/industry/government  keyword=NO  links=141
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://skills.github.com  keyword=NO  links=1
+  OK   200  https://maintainers.github.com  keyword=NO  links=2
+  OK   200  https://github.com/apache/spark/tree/master/core  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/tree/master/tools  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/blob/master/README.md  keyword=YES  links=190
+  OK   200  https://opensource.org/licenses/Apache-2.0  keyword=YES  links=65
+  OK   200  https://github.com/apache/spark/actions/workflows/build_main.yml  keyword=YES  links=263
+  OK   200  https://codecov.io/gh/apache/spark  keyword=NO  links=0
+  OK   200  https://spark.apache.org/documentation.html  keyword=YES  links=221
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven_java21_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_coverage.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_non_ansi.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_java21.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven_java21.yml  keyword=YES  links=213
+  OK   200  https://maven.apache.org/  keyword=YES  links=85
+  OK   200  https://spark.apache.org/docs/latest/configuration.html  keyword=YES  links=127
+  OK   200  https://github.com/apache/spark/activity  keyword=YES  links=97
+  OK   200  https://github.com/apache/spark/custom-properties  keyword=YES  links=81
+  OK   200  https://github.com/apache/spark/search?l=java  keyword=YES  links=81
+  OK   200  https://docs.github.com/site-policy/privacy-policies/github-privacy-statement  keyword=NO  links=158
+  OK   200  https://github.com/security  keyword=NO  links=152
+  OK   200  https://support.github.com?tags=dotcom-footer  keyword=NO  links=1
+  OK   200  https://github.com/features/copilot  keyword=NO  links=202
+  OK   200  https://github.com/mcp  keyword=NO  links=115
+  OK   200  https://github.com/features  keyword=NO  links=205
+  OK   200  https://github.com/team  keyword=NO  links=151
+  OK   200  https://github.com/solutions/use-case/devops  keyword=NO  links=142
+  OK   200  https://github.com/solutions  keyword=NO  links=148
+  OK   200  https://github.com/resources/articles?topic=security  keyword=NO  links=144
+  OK   200  https://github.com/resources/whitepapers  keyword=NO  links=147
+  OK   200  https://github.com/solutions/executive-insights  keyword=NO  links=141
+  OK   200  https://github.com/partners  keyword=NO  links=138
+  OK   200  https://github.com/topics  keyword=NO  links=147
+  OK   200  https://github.com/premium-support  keyword=NO  links=159
+  OK   200  https://github.com/apache/spark/security  keyword=YES  links=102
+  OK   200  https://github.com/apache/spark/commits/master/  keyword=YES  links=271
+  OK   200  https://github.com/apache/spark/tree/master/graphx  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/launcher  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/sbin  keyword=YES  links=141
+  OK   200  https://github.com/apache/spark/tree/master/sql  keyword=YES  links=129
+  OK   200  https://github.com/apache/spark/blob/master/.pre-commit-config.yaml  keyword=YES  links=103
+Finished: 8.96s | Pages: 51 | Hits: 29
+
+============================================================
+  CORES: 4 | RUN: 2/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/features/models  keyword=NO  links=142
+  FAIL 400  https://github.com/marketplace  keyword=NO  links=0
+  OK   200  https://github.com/solutions/industry/government  keyword=NO  links=141
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://skills.github.com  keyword=NO  links=1
+  OK   200  https://maintainers.github.com  keyword=NO  links=2
+  OK   200  https://github.com/apache/spark/tree/master/core  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/tree/master/tools  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/blob/master/README.md  keyword=YES  links=190
+  OK   200  https://opensource.org/licenses/Apache-2.0  keyword=YES  links=65
+  OK   200  https://github.com/apache/spark/actions/workflows/build_main.yml  keyword=YES  links=263
+  OK   200  https://codecov.io/gh/apache/spark  keyword=NO  links=0
+  OK   200  https://spark.apache.org/documentation.html  keyword=YES  links=221
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven_java21_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_coverage.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_non_ansi.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_java21.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven_java21.yml  keyword=YES  links=213
+  OK   200  https://maven.apache.org/  keyword=YES  links=85
+  OK   200  https://spark.apache.org/docs/latest/configuration.html  keyword=YES  links=127
+  OK   200  https://github.com/apache/spark/activity  keyword=YES  links=97
+  OK   200  https://github.com/apache/spark/custom-properties  keyword=YES  links=81
+  OK   200  https://github.com/apache/spark/search?l=java  keyword=YES  links=81
+  OK   200  https://docs.github.com/site-policy/privacy-policies/github-privacy-statement  keyword=NO  links=158
+  OK   200  https://github.com/security  keyword=NO  links=152
+  OK   200  https://support.github.com?tags=dotcom-footer  keyword=NO  links=1
+  OK   200  https://github.com/features/copilot  keyword=NO  links=202
+  OK   200  https://github.com/mcp  keyword=NO  links=115
+  OK   200  https://github.com/features  keyword=NO  links=205
+  OK   200  https://github.com/team  keyword=NO  links=151
+  OK   200  https://github.com/solutions/use-case/devops  keyword=NO  links=142
+  OK   200  https://github.com/solutions  keyword=NO  links=148
+  OK   200  https://github.com/resources/articles?topic=security  keyword=NO  links=144
+  OK   200  https://github.com/resources/whitepapers  keyword=NO  links=147
+  OK   200  https://github.com/solutions/executive-insights  keyword=NO  links=141
+  OK   200  https://github.com/partners  keyword=NO  links=138
+  OK   200  https://github.com/topics  keyword=NO  links=147
+  OK   200  https://github.com/premium-support  keyword=NO  links=159
+  OK   200  https://github.com/apache/spark/security  keyword=YES  links=102
+  OK   200  https://github.com/apache/spark/commits/master/  keyword=YES  links=271
+  OK   200  https://github.com/apache/spark/tree/master/graphx  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/launcher  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/sbin  keyword=YES  links=141
+  OK   200  https://github.com/apache/spark/tree/master/sql  keyword=YES  links=129
+  OK   200  https://github.com/apache/spark/blob/master/.pre-commit-config.yaml  keyword=YES  links=103
+Finished: 4.78s | Pages: 51 | Hits: 29
+
+============================================================
+  CORES: 4 | RUN: 3/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/features/models  keyword=NO  links=142
+  FAIL 400  https://github.com/marketplace  keyword=NO  links=0
+  OK   200  https://github.com/solutions/industry/government  keyword=NO  links=141
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://skills.github.com  keyword=NO  links=1
+  OK   200  https://maintainers.github.com  keyword=NO  links=2
+  OK   200  https://github.com/apache/spark/tree/master/core  keyword=YES  links=109
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/tree/master/tools  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/blob/master/README.md  keyword=YES  links=190
+  OK   200  https://opensource.org/licenses/Apache-2.0  keyword=YES  links=65
+  OK   200  https://github.com/apache/spark/actions/workflows/build_main.yml  keyword=YES  links=263
+  OK   200  https://codecov.io/gh/apache/spark  keyword=NO  links=0
+  OK   200  https://spark.apache.org/documentation.html  keyword=YES  links=221
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven_java21_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_coverage.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_non_ansi.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_java21.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven_java21.yml  keyword=YES  links=213
+  OK   200  https://maven.apache.org/  keyword=YES  links=85
+  OK   200  https://spark.apache.org/docs/latest/configuration.html  keyword=YES  links=127
+  OK   200  https://github.com/apache/spark/activity  keyword=YES  links=97
+  OK   200  https://github.com/apache/spark/custom-properties  keyword=YES  links=81
+  OK   200  https://github.com/apache/spark/search?l=java  keyword=YES  links=81
+  OK   200  https://docs.github.com/site-policy/privacy-policies/github-privacy-statement  keyword=NO  links=158
+  OK   200  https://github.com/security  keyword=NO  links=152
+  OK   200  https://support.github.com?tags=dotcom-footer  keyword=NO  links=1
+  OK   200  https://github.com/features/copilot  keyword=NO  links=202
+  OK   200  https://github.com/mcp  keyword=NO  links=115
+  OK   200  https://github.com/features  keyword=NO  links=205
+  OK   200  https://github.com/team  keyword=NO  links=151
+  OK   200  https://github.com/solutions/use-case/devops  keyword=NO  links=142
+  OK   200  https://github.com/solutions  keyword=NO  links=148
+  OK   200  https://github.com/resources/articles?topic=security  keyword=NO  links=144
+  OK   200  https://github.com/resources/whitepapers  keyword=NO  links=147
+  OK   200  https://github.com/solutions/executive-insights  keyword=NO  links=141
+  OK   200  https://github.com/partners  keyword=NO  links=138
+  OK   200  https://github.com/topics  keyword=NO  links=147
+  OK   200  https://github.com/premium-support  keyword=NO  links=159
+  OK   200  https://github.com/apache/spark/security  keyword=YES  links=102
+  OK   200  https://github.com/apache/spark/commits/master/  keyword=YES  links=271
+  OK   200  https://github.com/apache/spark/tree/master/graphx  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/launcher  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/sbin  keyword=YES  links=141
+  OK   200  https://github.com/apache/spark/tree/master/sql  keyword=YES  links=129
+  OK   200  https://github.com/apache/spark/blob/master/.pre-commit-config.yaml  keyword=YES  links=103
+Finished: 4.63s | Pages: 51 | Hits: 29
+
+============================================================
+  CORES: 8 | RUN: 1/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/blob/master/README.md  keyword=YES  links=190
+  OK   200  https://opensource.org/licenses/Apache-2.0  keyword=YES  links=65
+  OK   200  https://github.com/apache/spark/actions/workflows/build_main.yml  keyword=YES  links=263
+  OK   200  https://codecov.io/gh/apache/spark  keyword=NO  links=0
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven_java21_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_coverage.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_java21.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven_java21.yml  keyword=YES  links=213
+  OK   200  https://spark.apache.org/docs/latest/configuration.html  keyword=YES  links=127
+  OK   200  https://github.com/apache/spark/activity  keyword=YES  links=97
+  OK   200  https://github.com/apache/spark/custom-properties  keyword=YES  links=81
+  OK   200  https://github.com/security  keyword=NO  links=152
+  OK   200  https://support.github.com?tags=dotcom-footer  keyword=NO  links=1
+  OK   200  https://github.com/features/copilot  keyword=NO  links=202
+  OK   200  https://github.com/mcp  keyword=NO  links=115
+  OK   200  https://github.com/solutions  keyword=NO  links=148
+  OK   200  https://github.com/resources/whitepapers  keyword=NO  links=147
+  OK   200  https://github.com/partners  keyword=NO  links=138
+  OK   200  https://github.com/apache/spark/commits/master/  keyword=YES  links=271
+  OK   200  https://github.com/apache/spark/tree/master/sql  keyword=YES  links=129
+  OK   200  https://github.com/apache/spark/blob/master/CONTRIBUTING.md  keyword=YES  links=106
+  OK   200  https://github.com/apache/spark/blob/master/SECURITY.md  keyword=YES  links=108
+  OK   200  https://github.com/apache/spark/blob/master/scalastyle-config.xml  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.11.yml  keyword=YES  links=215
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.14_nogil.yml  keyword=YES  links=209
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_maven_java21.yml  keyword=YES  links=158
+  OK   200  https://github.com/topics/python  keyword=NO  links=466
+  OK   200  https://github.com/apache/spark/search?l=jupyter-notebook  keyword=YES  links=81
+  OK   200  https://github.com/features/code-review  keyword=NO  links=148
+  OK   200  https://github.com/resources/articles  keyword=NO  links=149
+  OK   200  https://support.github.com  keyword=NO  links=1
+  OK   200  https://securitylab.github.com  keyword=YES  links=87
+  OK   200  https://github.com/apache/spark/issues  keyword=YES  links=126
+  OK   200  https://github.com/apache/spark/tree/master/R  keyword=YES  links=130
+  OK   200  https://github.com/apache/spark/tree/master/binder  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/python  keyword=YES  links=154
+  OK   200  https://github.com/apache/spark/actions/workflows/publish_snapshot.yml  keyword=YES  links=214
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml  keyword=YES  links=214
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.12_classic_only.yml  keyword=YES  links=209
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_python.yml  keyword=YES  links=163
+  OK   200  https://spark.apache.org/docs/latest/building-spark.html  keyword=YES  links=79
+  OK   200  https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fapache%2Fspark  keyword=NO  links=11
+  OK   200  https://github.com/security/advanced-security/code-security  keyword=NO  links=145
+  OK   200  https://github.com/solutions/industry/financial-services  keyword=NO  links=141
+  OK   200  https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax  keyword=YES  links=89
+Finished: 8.38s | Pages: 51 | Hits: 35
+
+============================================================
+  CORES: 8 | RUN: 2/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/blob/master/README.md  keyword=YES  links=190
+  OK   200  https://opensource.org/licenses/Apache-2.0  keyword=YES  links=65
+  OK   200  https://github.com/apache/spark/actions/workflows/build_main.yml  keyword=YES  links=263
+  OK   200  https://codecov.io/gh/apache/spark  keyword=NO  links=0
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven_java21_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_coverage.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_java21.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven_java21.yml  keyword=YES  links=213
+  OK   200  https://spark.apache.org/docs/latest/configuration.html  keyword=YES  links=127
+  OK   200  https://github.com/apache/spark/activity  keyword=YES  links=97
+  OK   200  https://github.com/apache/spark/custom-properties  keyword=YES  links=81
+  OK   200  https://github.com/security  keyword=NO  links=152
+  OK   200  https://support.github.com?tags=dotcom-footer  keyword=NO  links=1
+  OK   200  https://github.com/features/copilot  keyword=NO  links=202
+  OK   200  https://github.com/mcp  keyword=NO  links=115
+  OK   200  https://github.com/solutions  keyword=NO  links=148
+  OK   200  https://github.com/resources/whitepapers  keyword=NO  links=147
+  OK   200  https://github.com/partners  keyword=NO  links=138
+  OK   200  https://github.com/apache/spark/commits/master/  keyword=YES  links=271
+  OK   200  https://github.com/apache/spark/tree/master/sql  keyword=YES  links=129
+  OK   200  https://github.com/apache/spark/blob/master/CONTRIBUTING.md  keyword=YES  links=106
+  OK   200  https://github.com/apache/spark/blob/master/SECURITY.md  keyword=YES  links=108
+  OK   200  https://github.com/apache/spark/blob/master/scalastyle-config.xml  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.11.yml  keyword=YES  links=215
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.14_nogil.yml  keyword=YES  links=209
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_maven_java21.yml  keyword=YES  links=158
+  OK   200  https://github.com/topics/python  keyword=NO  links=466
+  OK   200  https://github.com/apache/spark/search?l=jupyter-notebook  keyword=YES  links=81
+  OK   200  https://github.com/features/code-review  keyword=NO  links=148
+  OK   200  https://github.com/resources/articles  keyword=NO  links=149
+  OK   200  https://support.github.com  keyword=NO  links=1
+  OK   200  https://securitylab.github.com  keyword=YES  links=87
+  OK   200  https://github.com/apache/spark/issues  keyword=YES  links=126
+  OK   200  https://github.com/apache/spark/tree/master/R  keyword=YES  links=130
+  OK   200  https://github.com/apache/spark/tree/master/binder  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/python  keyword=YES  links=154
+  OK   200  https://github.com/apache/spark/actions/workflows/publish_snapshot.yml  keyword=YES  links=214
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml  keyword=YES  links=214
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.12_classic_only.yml  keyword=YES  links=209
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_python.yml  keyword=YES  links=163
+  OK   200  https://spark.apache.org/docs/latest/building-spark.html  keyword=YES  links=79
+  OK   200  https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fapache%2Fspark  keyword=NO  links=11
+  OK   200  https://github.com/security/advanced-security/code-security  keyword=NO  links=145
+  OK   200  https://github.com/solutions/industry/financial-services  keyword=NO  links=141
+  OK   200  https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax  keyword=YES  links=89
+Finished: 3.04s | Pages: 51 | Hits: 35
+
+============================================================
+  CORES: 8 | RUN: 3/3
+============================================================
+[DEPTH 0] Processing 1 URLs
+  OK   200  https://github.com/apache/spark  keyword=YES  links=332
+[DEPTH 1] Processing 50 URLs
+  OK   200  https://github.com/resources/articles?topic=software-development  keyword=NO  links=144
+  OK   200  https://github.com/apache/spark/tree/master/docs  keyword=YES  links=319
+  OK   200  https://github.com/apache/spark/blob/master/README.md  keyword=YES  links=190
+  OK   200  https://opensource.org/licenses/Apache-2.0  keyword=YES  links=65
+  OK   200  https://github.com/apache/spark/actions/workflows/build_main.yml  keyword=YES  links=263
+  OK   200  https://codecov.io/gh/apache/spark  keyword=NO  links=0
+  OK   200  https://github.com/apache/spark/actions/workflows/build_maven_java21_macos26.yml  keyword=YES  links=211
+  OK   200  https://github.com/apache/spark/actions/workflows/build_coverage.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml?query=branch%3Abranch-4.x  keyword=YES  links=116
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_java21.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven.yml  keyword=YES  links=213
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch40_maven_java21.yml  keyword=YES  links=213
+  OK   200  https://spark.apache.org/docs/latest/configuration.html  keyword=YES  links=127
+  OK   200  https://github.com/apache/spark/activity  keyword=YES  links=97
+  OK   200  https://github.com/apache/spark/custom-properties  keyword=YES  links=81
+  OK   200  https://github.com/security  keyword=NO  links=152
+  OK   200  https://support.github.com?tags=dotcom-footer  keyword=NO  links=1
+  OK   200  https://github.com/features/copilot  keyword=NO  links=202
+  OK   200  https://github.com/mcp  keyword=NO  links=115
+  OK   200  https://github.com/solutions  keyword=NO  links=148
+  OK   200  https://github.com/resources/whitepapers  keyword=NO  links=147
+  OK   200  https://github.com/partners  keyword=NO  links=138
+  OK   200  https://github.com/apache/spark/commits/master/  keyword=YES  links=271
+  OK   200  https://github.com/apache/spark/tree/master/sql  keyword=YES  links=129
+  OK   200  https://github.com/apache/spark/blob/master/CONTRIBUTING.md  keyword=YES  links=106
+  OK   200  https://github.com/apache/spark/blob/master/SECURITY.md  keyword=YES  links=108
+  OK   200  https://github.com/apache/spark/blob/master/scalastyle-config.xml  keyword=YES  links=103
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.11.yml  keyword=YES  links=215
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.14_nogil.yml  keyword=YES  links=209
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_maven_java21.yml  keyword=YES  links=158
+  OK   200  https://github.com/topics/python  keyword=NO  links=466
+  OK   200  https://github.com/apache/spark/search?l=jupyter-notebook  keyword=YES  links=81
+  OK   200  https://github.com/features/code-review  keyword=NO  links=148
+  OK   200  https://github.com/resources/articles  keyword=NO  links=149
+  OK   200  https://support.github.com  keyword=NO  links=1
+  OK   200  https://securitylab.github.com  keyword=YES  links=87
+  OK   200  https://github.com/apache/spark/issues  keyword=YES  links=126
+  OK   200  https://github.com/apache/spark/tree/master/R  keyword=YES  links=130
+  OK   200  https://github.com/apache/spark/tree/master/binder  keyword=YES  links=107
+  OK   200  https://github.com/apache/spark/tree/master/python  keyword=YES  links=154
+  OK   200  https://github.com/apache/spark/actions/workflows/publish_snapshot.yml  keyword=YES  links=214
+  OK   200  https://github.com/apache/spark/actions/workflows/build_java25.yml  keyword=YES  links=214
+  OK   200  https://github.com/apache/spark/actions/workflows/build_python_3.12_classic_only.yml  keyword=YES  links=209
+  OK   200  https://github.com/apache/spark/actions/workflows/build_branch42_python.yml  keyword=YES  links=163
+  OK   200  https://spark.apache.org/docs/latest/building-spark.html  keyword=YES  links=79
+  OK   200  https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fapache%2Fspark  keyword=NO  links=11
+  OK   200  https://github.com/security/advanced-security/code-security  keyword=NO  links=145
+  OK   200  https://github.com/solutions/industry/financial-services  keyword=NO  links=141
+  OK   200  https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax  keyword=YES  links=89
+Finished: 3.06s | Pages: 51 | Hits: 35

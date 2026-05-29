@@ -102,31 +102,27 @@ python src/crawler.py \
 
 ### Tabela rezultatov
 
-| Jedra (p) | Zagon 1 [s] | Zagon 2 [s] | Zagon 3 [s] | Povprečje T(p) [s] | Pospešek S(p) | Idealni S(p) | Karp-Flatt e |
-|-----------|-------------|-------------|-------------|---------------------|---------------|-------------|-------------|
-| 1         | 29.52       | 11.30       | 11.19       | 17.34               | 1.0000        | 1.0         | 0.000000    |
-| 2         | 13.42       | 6.48        | 6.69        | 8.86                | 1.9561        | 2.0         | 0.022428    |
-| 4         | 8.79        | 4.62        | 4.49        | 5.97                | 2.9054        | 4.0         | 0.125582    |
-| 8         | 5.49        | 3.53        | 3.52        | 4.18                | 4.1477        | 8.0         | 0.132681    |
+| Jedra (p) | Zagon 1 [s] | Zagon 2 [s] | Zagon 3 [s] | Povprečje T(p) [s] | Std [s] | Pospešek S(p) | Idealni S(p) | Karp-Flatt e | Strani | Zadetki |
+|-----------|-------------|-------------|-------------|---------------------|---------|---------------|-------------|-------------|--------|---------|
+| 1         | 33.99       | 10.52       | 11.48       | 18.66               | 13.28   | 1.0000        | 1.0         | 0.000000    | 51     | 25      |
+| 2         | 14.60       | 6.49        | 6.35        | 9.15                | 4.73    | 2.0406        | 2.0         | -0.019875   | 51     | 33      |
+| 4         | 8.96        | 4.78        | 4.63        | 6.12                | 2.45    | 3.0479        | 4.0         | 0.104125    | 51     | 29      |
+| 8         | 8.38        | 3.04        | 3.06        | 4.83                | 3.08    | 3.8667        | 8.0         | 0.152711    | 51     | 35      |
 
-### Grafi
+### Pospešek S(p)
 
-#### Pospešek S(p)
-![Pospešek](results/speedup.png)
+#### Primerjava dejanskega in idealnega pospeška
 
-#### Karp-Flattova metrika e
-![Karp-Flatt](results/karp_flatt.png)
+| Niti (p) | Dejanski pospešek S(p) | Idealni pospešek | Odmik |
+|----------|------------------------|-------------------|-------|
+| 1        | 1.00                   | 1                 | —     |
+| 2        | 2.04                   | 2                 | +0.04 (super-linearen) |
+| 4        | 3.05                   | 4                 | -0.95 |
+| 8        | 3.87                   | 8                 | -4.13 |
 
-#### Čas izvajanja
-![Čas izvajanja](results/execution_time.png)
+Pospešek S(p) pove, kolikokrat hitreje teče program z več nitmi: `S(p) = T(1) / T(p)`. Idealno bi 2 niti pomenili 2x hitrejše, 4 niti 4x hitrejše itd. V praksi se to nikoli ne doseže popolnoma, ker del programa vedno teče zaporedno in ga ni mogoče paralelizirati (Amdahlov zakon).
 
----
-
-## Interpretacija rezultatov
-
-### Odmik od idealnega pospeška
-
-Rezultati kažejo, da pospešek sledi idealnemu trendu pri manjšem številu jeder, nato pa se odmik povečuje. Pri 2 jedrih dosežemo pospešek 1.96x (skoraj idealna 2x), pri 4 jedrih 2.91x (namesto 4x), pri 8 jedrih pa 4.15x (namesto 8x). Razlogi za odmik:
+Rezultati kažejo, da pospešek sledi idealnemu trendu pri manjšem številu niti, nato pa se odmik povečuje. Pri 2 nitih dosežemo pospešek 2.04x (celo rahlo super-linearen), pri 4 nitih 3.05x (namesto 4x), pri 8 nitih pa 3.87x (namesto 8x). Razlogi za odmik:
 
 **1. I/O-bound narava naloge.** Scraping spletnih strani je pretežno omejen z mrežno latenco, ne s procesorsko močjo. Vsaka HTTP zahteva traja 100–500 ms (ali več), kar je neodvisno od števila CPU jeder. Tudi z več executorji čakamo na isti omrežni vmesnik in iste oddaljene strežnike, ki lahko omejujejo število sočasnih povezav z istega IP naslova (rate limiting).
 
@@ -134,16 +130,39 @@ Rezultati kažejo, da pospešek sledi idealnemu trendu pri manjšem številu jed
 
 **3. Neenakomerna porazdelitev dela (load imbalance).** Spletne strani so zelo različnih velikosti — nekatere vsebujejo na tisoče povezav in veliko besedila, druge so majhne ali nedosegljive. To pomeni, da nekateri executorji končajo delo mnogo prej kot drugi in čakajo.
 
-### Trend Karp-Flattove metrike
+![Pospešek](results/speedup.png)
 
-Karp-Flattova metrika e narašča od 0.02 pri 2 jedrih do 0.13 pri 4 jedrih, nato pa se ustali pri 0.13 tudi pri 8 jedrih. Začetna rast pomeni, da se efektivni delež sekvenčnega dela povečuje z dodajanjem jeder — posledica Spark overheada in mrežnih omejitev. Plateau med 4 in 8 jedri kaže, da overhead ne narašča več, ampak obstaja trda zgornja meja paralelizacije zaradi I/O ozkega grla.
+### Karp-Flattova metrika e
 
-### Identifikacija ozkih grl
+#### Karp-Flatt metrika po številu niti
+
+| Niti (p) | Karp-Flatt e | Pomen |
+|----------|-------------|-------|
+| 2        | -0.02       | Super-linearen pospešek (verjetno varianca meritev ali predpomnilnik) |
+| 4        | 0.10        | ~10% programa je efektivno sekvenčnega |
+| 8        | 0.15        | ~15% programa je efektivno sekvenčnega |
+
+Karp-Flattova metrika e iz meritev izračuna dejanski delež programa, ki se obnaša sekvenčno: `e = (1/S(p) - 1/p) / (1 - 1/p)`. Za razliko od Amdahlovega zakona (ki predpostavlja fiksen sekvenčni delež) Karp-Flatt zajame tudi overhead, ki **narašča** z dodajanjem niti.
+
+Če bi bil e konstanten, bi imeli fiksno ozko grlo (klasičen Amdahlov zakon). Naraščanje iz 0.10 na 0.15 pa kaže, da se overhead paralelizacije povečuje z dodajanjem niti — posledica Spark overheada za razporejanje nalog, mrežne konkurence in sinhronizacije med iteracijami. To ni fiksno sekvenčno ozko grlo, temveč rastoč strošek paralelizacije same.
+
+Negativna vrednost pri 2 nitih (-0.02) pomeni, da je bil pospešek rahlo super-linearen (2.04x z 2 nitma), kar se lahko zgodi zaradi učinkov predpomnilnika operacijskega sistema ali naravne variance pri meritvah.
+
+![Karp-Flatt](results/karp_flatt.png)
+
+### Čas izvajanja
+
+![Čas izvajanja](results/execution_time.png)
+
+---
+
+## Identifikacija ozkih grl
 
 1. **Mrežna latenca:** Glavno ozko grlo. HTTP zahteve trajajo 10–100x dlje kot obdelava HTML-ja.
 2. **Rate limiting:** Strežniki (npr. GitHub) omejujejo število zahtev na časovno enoto, kar umetno upočasni vzporedno izvajanje.
 3. **Spark serializacija:** Overhead za razporejanje in zbiranje nalog pri majhnem obsegu dela.
 4. **Deduplikacija med iteracijami:** Operaciji `distinct()` in `subtract()` zahtevata dodatno komunikacijo med executorji.
+5. **Sinhronizacija med globinami:** BFS pristop zahteva, da se vse naloge na globini N zaključijo, preden se začne globina N+1. Hitrejši executorji čakajo na počasnejše.
 
 ### Možne izboljšave
 

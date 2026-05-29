@@ -13,6 +13,7 @@ import sys
 import json
 import time
 import statistics
+from datetime import datetime
 
 # Import crawlerja - dodamo pot do src mape
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -59,6 +60,7 @@ def run_benchmark(seed_url, keyword, max_depth, core_configs, num_runs=3, max_ur
         seznam dict-ov z rezultati
     """
     results = []
+    crawl_logs = []
 
     for cores in core_configs:
         print(f"\n{'#'*60}")
@@ -74,6 +76,15 @@ def run_benchmark(seed_url, keyword, max_depth, core_configs, num_runs=3, max_ur
             elapsed = result["elapsed_time"]
             run_times.append(elapsed)
             run_details.append(result)
+            crawl_logs.append({
+                "cores": cores,
+                "run": run_num,
+                "total_runs": num_runs,
+                "log_entries": result["log_entries"],
+                "elapsed_time": result["elapsed_time"],
+                "total_pages": result["total_pages"],
+                "total_hits": result["total_hits"]
+            })
             print(f"  -> Čas: {elapsed:.2f} s | Strani: {result['total_pages']} | Zadetki: {result['total_hits']}")
 
             # Kratka pavza med zagoni
@@ -101,7 +112,7 @@ def run_benchmark(seed_url, keyword, max_depth, core_configs, num_runs=3, max_ur
         r["karp_flatt"] = compute_karp_flatt(r["speedup"], r["cores"])
         r["ideal_speedup"] = float(r["cores"])
 
-    return results
+    return results, crawl_logs
 
 
 def save_results_csv(results, filepath, num_runs=3):
@@ -245,7 +256,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
     core_configs = [int(c) for c in args.cores.split(",")]
 
-    os.makedirs(args.output_dir, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    output_dir = os.path.join(args.output_dir, timestamp)
+    os.makedirs(output_dir, exist_ok=True)
 
     print(f"\n{'='*60}")
     print(f"  BENCHMARK: Vzporedni Link Crawler")
@@ -255,14 +268,37 @@ if __name__ == "__main__":
     print(f"  Max URLs/nivo:  {args.max_urls}")
     print(f"  Konfiguracije:  {core_configs}")
     print(f"  Ponovitev:      {args.runs}")
+    print(f"  Output:         {output_dir}")
     print(f"{'='*60}")
 
-    results = run_benchmark(
+    results, crawl_logs = run_benchmark(
         args.seed_url, args.keyword, args.max_depth,
         core_configs, args.runs, args.max_urls
     )
 
     print_summary(results)
-    save_results_csv(results, os.path.join(args.output_dir, "benchmark_results.csv"), args.runs)
-    save_results_json(results, os.path.join(args.output_dir, "benchmark_results.json"))
-    generate_plots(results, args.output_dir)
+    save_results_csv(results, os.path.join(output_dir, "benchmark_results.csv"), args.runs)
+    save_results_json(results, os.path.join(output_dir, "benchmark_results.json"))
+    generate_plots(results, output_dir)
+
+    log_path = os.path.join(output_dir, "crawl.log")
+    with open(log_path, "w") as f:
+        for log in crawl_logs:
+            f.write(f"\n{'='*60}\n")
+            f.write(f"  CORES: {log['cores']} | RUN: {log['run']}/{log['total_runs']}\n")
+            f.write(f"{'='*60}\n")
+            current_depth = None
+            for entry in log["log_entries"]:
+                if entry["depth"] != current_depth:
+                    current_depth = entry["depth"]
+                    count = sum(1 for e in log["log_entries"] if e["depth"] == current_depth)
+                    f.write(f"[DEPTH {current_depth}] Processing {count} URLs\n")
+                status = entry["status"]
+                kw = "YES" if entry["keyword_found"] else "NO"
+                if isinstance(status, int):
+                    label = "OK" if status < 400 else "FAIL"
+                    f.write(f"  {label:4s} {status}  {entry['url']}  keyword={kw}  links={entry['links_found']}\n")
+                else:
+                    f.write(f"  ERR  ---  {entry['url']}  {status}\n")
+            f.write(f"Finished: {log['elapsed_time']:.2f}s | Pages: {log['total_pages']} | Hits: {log['total_hits']}\n")
+    print(f"\nCrawl log shranjen: {log_path}")
